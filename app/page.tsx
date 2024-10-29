@@ -34,7 +34,7 @@ export default async function Home() {
   return (
     <div className="container mx-auto pt-10">
       <h1 className="font-bold text-3xl mb-3">
-        Kva skjer i
+        Kva skjer i{" "}
         <span className="bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
           Vestre Slidre?
         </span>

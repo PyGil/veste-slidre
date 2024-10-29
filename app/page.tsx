@@ -46,7 +46,7 @@ export default async function Home() {
               <CardContent className="z-10 absolute top-1 left-1 rounded-lg bg-card/50 backdrop-blur-lg p-2 text-center text-background">
                 <p className="uppercase text-sm">{getMonthName(event.date)}</p>
                 <p className="uppercase font-bold text-xl">
-                  {new Date(event.date).getDay()}
+                  {new Date(event.date).getDate()}
                 </p>
               </CardContent>
               <CardContent className="z-10 absolute bottom-1 left-1 right-1 rounded-lg bg-card/50 backdrop-blur p-2">

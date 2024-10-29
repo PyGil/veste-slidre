@@ -45,7 +45,7 @@ export default async function Event({ params: { eventName } }: OwnProps) {
       <h1 className="font-bold text-3xl mb-3 text-center mb-4">
         {event.title}
       </h1>
-      <div className="prose">
+      <div className="prose w-full">
         <PortableText value={event.description} />
       </div>
     </div>

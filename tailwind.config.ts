@@ -59,6 +59,10 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      backgroundSize: {
+        lg: "150%",
+        full: "100%",
+      },
     },
   },
   plugins: [animate, typography()],

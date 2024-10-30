@@ -4,11 +4,6 @@ import Image from "next/image";
 import { Clock } from "lucide-react";
 import { Event } from "@/lib/interfaces/event";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-} from "@radix-ui/react-navigation-menu";
 
 const getFormattedDate = (
   date: string,
@@ -57,26 +52,12 @@ export default async function Home() {
     return previous;
   }, {});
 
+  // const todayEvents = sortedData[new Date().toLocaleDateString("no-NO", { month: 'long'})]
+
   return (
     <>
-      <header className="bg-blue-950 py-2 px-4 sticky top-0 z-50">
-        <NavigationMenu className="max-w-screen-xl mx-auto px-2">
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="https://www.vestre-slidre.kommune.no/">
-                <Image
-                  src="/images/header-logo.svg"
-                  width={300}
-                  height={60}
-                  alt="Logo"
-                />
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </header>
       <div className="max-w-screen-xl mx-auto pt-20 px-2">
-        <h1 className="font-bold text-4xl mb-6">
+        <h1 className="font-bold text-5xl mb-6 uppercase">
           Kva skjer i{" "}
           <span className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
             Vestre Slidre?

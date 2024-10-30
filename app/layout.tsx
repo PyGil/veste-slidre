@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+} from "@/shadcn-ui/components/ui/navigation-menu";
+import Link from "next/link";
+import Image from "next/image";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,11 +33,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="no">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header className="bg-blue-950 py-2 sticky top-0 z-50">
+            <NavigationMenu className="max-w-screen-xl mx-auto px-2 block ">
+              <NavigationMenuList className="justify-between w-full">
+                <NavigationMenuItem>
+                  <Link href="https://www.vestre-slidre.kommune.no/">
+                    <Image
+                      src="/images/header-logo.svg"
+                      width={300}
+                      height={60}
+                      alt="Logo"
+                      layout="intrinsic"
+                    />
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                <ModeToggle />
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </header>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

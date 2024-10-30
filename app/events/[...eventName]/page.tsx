@@ -1,6 +1,16 @@
 import { Event as EventType } from "@/lib/interfaces/event";
-import { sanityClient } from "@/lib/utils/sanity";
+import { getImageData, sanityClient } from "@/lib/utils/sanity";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/shadcn-ui/components/ui/breadcrumb";
 import { PortableText } from "@portabletext/react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface OwnProps {
   params: { eventName: string };
@@ -41,13 +51,36 @@ export default async function Event({ params: { eventName } }: OwnProps) {
   }
 
   return (
-    <div className="container mx-auto pt-10">
-      <h1 className="font-bold text-3xl mb-3 text-center mb-4">
-        {event.title}
-      </h1>
-      <div className="prose w-full max-w-full">
-        <PortableText value={event.description} />
+    <>
+      <div className="relative h-[500px] w-full bg-gradient-to-br from-blue-500 via-purple-500 to-red-500">
+        {event.image && (
+          <Image
+            src={getImageData(event.image).url()}
+            alt="banner"
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
       </div>
-    </div>
+      <div className="container mx-auto pt-10">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Forside</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{event.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h1 className="font-bold text-3xl text-center mb-4">{event.title}</h1>
+        <div className="prose w-full max-w-full">
+          <PortableText value={event.description} />
+        </div>
+      </div>
+    </>
   );
 }

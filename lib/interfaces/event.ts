@@ -8,4 +8,5 @@ export interface Event {
   image: SanityImageSource;
   duration: string;
   slug: string;
+  location: string;
 }

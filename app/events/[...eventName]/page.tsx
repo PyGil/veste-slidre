@@ -57,8 +57,10 @@ export default async function Event({ params: { eventName } }: OwnProps) {
           <Image
             src={getImageData(event.image).url()}
             alt="banner"
-            layout="fill"
             objectFit="cover"
+            width={1920}
+            height={500}
+            className="h-full w-full object-cover"
           />
         )}
       </div>

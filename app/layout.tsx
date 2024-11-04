@@ -43,8 +43,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="bg-blue-950 py-2 sticky top-0 z-50">
-            <NavigationMenu className="max-w-screen-xl mx-auto px-2 block ">
+          <header className="container mx-auto rounded-lg bg-blue-950/80 backdrop-blur py-4 px-2 fixed left-1/2 transform -translate-x-1/2 top-4 z-50">
+            <NavigationMenu className="grid grid-cols-1 max-w-full">
               <NavigationMenuList className="justify-between w-full">
                 <NavigationMenuItem>
                   <Link href="https://www.vestre-slidre.kommune.no/">
@@ -52,18 +52,25 @@ export default function RootLayout({
                       src="/images/header-logo.svg"
                       width={300}
                       height={60}
+                      className="w-[235px] h-[44px] object-contain"
                       alt="Logo"
-                      layout="intrinsic"
                     />
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                <ModeToggle />
+                  <ModeToggle />
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </header>
-          {children}
+          <main
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 70% 50%, rgb(28 138 255 / 30%), transparent 50%), radial-gradient(circle at 100% 60%, rgb(152 73 248 / 40%), transparent 35%)",
+            }}
+          >
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>

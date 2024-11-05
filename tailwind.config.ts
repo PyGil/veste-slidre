@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 import typography from "@tailwindcss/typography";
+import { PluginAPI } from "tailwindcss/types/config";
 
 const config: Config = {
   darkMode: ["class"],
@@ -63,8 +64,22 @@ const config: Config = {
         lg: "150%",
         full: "100%",
       },
+      boxShadow: {
+        glow: "0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.6)",
+      },
     },
   },
-  plugins: [animate, typography()],
+  plugins: [
+    animate,
+    typography(),
+    ({ addUtilities }: PluginAPI) => {
+      addUtilities({
+        ".text-glow": {
+          textShadow:
+            "0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.6)",
+        },
+      });
+    },
+  ],
 };
 export default config;

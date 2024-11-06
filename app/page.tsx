@@ -1,16 +1,17 @@
-import { sanityClient, getImageData } from "@/lib/utils/sanity";
-import { Card, CardContent, CardTitle } from "@/shadcn-ui/components/ui/card";
 import Image from "next/image";
-import { Clock, MapPin } from "lucide-react";
-import { Event } from "@/lib/interfaces/event";
 import Link from "next/link";
+import { Clock, MapPin } from "lucide-react";
 
-const getFormattedDate = (
-  date: string,
-  options: Intl.DateTimeFormatOptions
-) => {
-  return new Intl.DateTimeFormat("no-NO", options).format(new Date(date));
-};
+import { Card, CardContent, CardTitle } from "@/shadcn-ui/components/ui/card";
+import { Event } from "@/lib/interfaces/event";
+import { sanityClient, getImageData } from "@/lib/utils/sanity";
+import {
+  getDay,
+  getLongMonth,
+  getNextThreeDays,
+  getShortMonth,
+  sortDatesByAscending,
+} from "@/lib/utils/date";
 
 async function getData() {
   const query = `
@@ -30,21 +31,28 @@ async function getData() {
   return data;
 }
 
+const [nextThreeDays, nextThreeDaysNames] = getNextThreeDays();
+
+const dayTabs =  nextThreeDaysNames.reduce((previous: Record<string, Event[]>, current: string) => {
+  previous[current] = [];
+
+  return previous;
+}, {});
+
+
+console.log("dayTabs", dayTabs, nextThreeDaysNames);
+
 interface SortedEvents {
   [key: string]: Event[];
 }
 
 export default async function Home() {
-  const data = (await getData()).sort(
-    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  const data = (await getData()).sort((firstEvent, secondEvent) =>
+    sortDatesByAscending(firstEvent.date, secondEvent.date)
   );
 
   const sortedData = data.reduce((previous: SortedEvents, current: Event) => {
-    const month = getFormattedDate(current.date, { month: "long" });
-    console.log(getFormattedDate(current.date, { day: "numeric" }));
-    console.log("today", new Date().toLocaleDateString("no-NO", { day: "numeric" }), {
-      day: "numeric",
-    });
+    const month = getLongMonth(current.date);
 
     if (!previous[month]) {
       previous[month] = [current];
@@ -58,8 +66,6 @@ export default async function Home() {
   }, {});
 
   console.log("sortedData", sortedData);
-
-  // const todayEvents = sortedData[new Date().toLocaleDateString("no-NO", { month: 'long'})]
 
   return (
     <>
@@ -85,10 +91,10 @@ export default async function Home() {
                   <Card className="pt-6 relative min-h-[420px] bg-gradient-to-br from-blue-500 via-purple-500 to-red-500 bg-full overflow-hidden transition-all duration-200 hover:bg-lg">
                     <CardContent className="z-30 absolute top-1 left-1 rounded-lg bg-card/50 backdrop-blur-lg p-2 text-center text-foreground">
                       <p className="uppercase text-sm">
-                        {getFormattedDate(event.date, { month: "short" })}
+                        {getShortMonth(event.date)}
                       </p>
                       <p className="uppercase font-bold text-xl">
-                        {new Date(event.date).getDate()}
+                        {getDay(event.date)}
                       </p>
                     </CardContent>
                     <CardContent className="z-30 absolute bottom-0 left-0 right-0 bg-card/50 backdrop-blur p-2 backdrop-saturate-150 border-t-[1px]">

@@ -1,3 +1,5 @@
+import { Event } from "../interfaces/event";
+
 const longMonthFormatter = new Intl.DateTimeFormat("no-NO", { month: "long" });
 const shortMothFormatter = new Intl.DateTimeFormat("no-NO", { month: "short" });
 const weekdayFormatter = new Intl.DateTimeFormat("no-NO", { weekday: "long" });
@@ -39,5 +41,14 @@ export const getNextThreeDays = (date?: string) => {
     nextThreeDays.push(formattedDate);
   }
 
-  return [nextThreeDays, nextThreeDaysNames];
+  const daysTabs = nextThreeDaysNames.reduce(
+    (previous: Record<string, Event[]>, current: string) => {
+      previous[current] = [];
+
+      return previous;
+    },
+    {}
+  );
+
+  return { nextThreeDays, nextThreeDaysNames, daysTabs };
 };

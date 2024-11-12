@@ -7,13 +7,15 @@ const DEFAULT_OPTIONS = {
 };
 
 export default function useIntersectionObserver(
-  element: RefObject<HTMLDivElement>,
+  element: RefObject<HTMLDivElement | null>,
   options: IntersectionObserverInit = DEFAULT_OPTIONS
 ) {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
     const currentElement = element.current;
+
+    console.log("currentElement", currentElement);
 
     if (!currentElement) {
       return;

@@ -1,5 +1,5 @@
 import { Event } from "@/lib/interfaces/event";
-import { sanityClient, getImageData } from "@/lib/utils/sanity";
+import { sanityClient } from "@/lib/utils/sanity";
 import {
   compareDates,
   getLongMonth,

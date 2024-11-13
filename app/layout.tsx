@@ -10,6 +10,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Facebook, Instagram } from "@/components/icons";
+import { Mail, Phone } from "lucide-react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -72,6 +74,61 @@ export default function RootLayout({
             {children}
           </main>
         </ThemeProvider>
+        <footer className="bg-background pt-12 pb-4">
+          <div className="container mx-auto px-2 flex justify-end gap-20">
+            <div>
+              <p className="text-xl mb-2 uppercase">Følg oss</p>
+              <ul className="flex gap-4 items-center">
+                <li>
+                  <a
+                    className="hover:opacity-70"
+                    href="https://www.facebook.com/Vestre-Slidre-kommune-1479908342278203"
+                    target="_blank"
+                  >
+                    <Facebook />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="hover:opacity-70"
+                    href="https://www.instagram.com/explore/tags/vestreslidre"
+                    target="_blank"
+                  >
+                    <Instagram />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-xl mb-2 uppercase">Kontakt oss</p>
+              <ul>
+                <li className="mb-2 text-lg">
+                  <a
+                    className="hover:opacity-70 flex items-center gap-2"
+                    href="mailto:post@vestre-slidre.kommune.no"
+                  >
+                    <Mail />
+                    <span className="hover:underline">
+                      post@vestre-slidre.kommune.no
+                    </span>
+                  </a>
+                </li>
+                <li className="flex items-center gap-2 text-lg">
+                  <a
+                    className="hover:opacity-70 flex items-center gap-2"
+                    href="tel:+4761345000"
+                    target="_blank"
+                  >
+                    <Phone />
+                    <span className="hover:underline">61 34 50 00</span>
+                  </a>
+                  <span>(kl. 09.00-15.00)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-center text-lg mt-2">{new Date().getFullYear()} © Vestre Slidre</p>
+        </footer>
       </body>
     </html>
   );

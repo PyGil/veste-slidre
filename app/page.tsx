@@ -6,7 +6,6 @@ import {
   getNextThreeDays,
   sortDatesByAscending,
 } from "@/lib/utils/date";
-import clsx from "clsx";
 import {
   Tabs,
   TabsList,
@@ -14,7 +13,8 @@ import {
   TabsContent,
 } from "@/shadcn-ui/components/ui/tabs";
 import EventCard from "@/components/event-card";
-import AnimatedOnScrollBlock from "@/components/animated-onscroll-block";
+import IntersectionBlock from "@/components/intersection-block";
+import { cn } from "@/shadcn-ui/lib/utils";
 
 async function getData() {
   const query = `
@@ -73,8 +73,6 @@ export default async function Home() {
     { dataByMonth: {}, dataByDay: daysTabs }
   );
 
-  console.log("databyDay", dataByDay);
-
   return (
     <div className="container mx-auto pt-40 px-2">
       <h1 className="font-bold text-5xl mb-20 uppercase text-center text-foreground/65">
@@ -106,23 +104,25 @@ export default async function Home() {
       </Tabs>
       {Object.keys(dataByMonth).map((month) => (
         <div key={month} className="mb-10">
-          <AnimatedOnScrollBlock>
+          <IntersectionBlock>
             <h2 className="text-8xl font-bold uppercase bg-gradient-to-r from-[rgb(28,138,255)] via-[rgb(152,73,248)] to-[rgb(248,73,204)] bg-clip-text text-transparent w-fit">
               {month}
             </h2>
-          </AnimatedOnScrollBlock>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-4">
-            {dataByMonth[month].map((event, index, array) => (
-              <EventCard
-                key={event.slug}
-                {...event}
-                className={clsx(
-                  { "col-span-2": index === array.length - 2 },
-                  "group first:row-span-2"
-                )}
-              />
-            ))}
-          </div>
+          </IntersectionBlock>
+          <IntersectionBlock baseClassName="transform translate-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-4">
+              {dataByMonth[month].map((event, index, array) => (
+                <EventCard
+                  key={event.slug}
+                  {...event}
+                  className={cn(
+                    "group first:row-span-2",
+                    index === array.length - 2 && "col-span-2"
+                  )}
+                />
+              ))}
+            </div>
+          </IntersectionBlock>
         </div>
       ))}
     </div>

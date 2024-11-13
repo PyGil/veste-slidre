@@ -3,7 +3,7 @@ import { useState, useEffect, RefObject } from "react";
 const DEFAULT_OPTIONS = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.5,
+  threshold: 0.1,
 };
 
 export default function useIntersectionObserver(
@@ -14,8 +14,6 @@ export default function useIntersectionObserver(
 
   useEffect(() => {
     const currentElement = element.current;
-
-    console.log("currentElement", currentElement);
 
     if (!currentElement) {
       return;

@@ -2,24 +2,32 @@
 
 import { PropsWithChildren, useRef } from "react";
 
-import clsx from "clsx";
-
 import { ClassName } from "@/lib/types/class-name";
 import useIntersectionObserver from "@/lib/hooks/use-intersection-observer";
+import { cn } from "@/shadcn-ui/lib/utils";
 
-export default function AnimatedOnScrollBlock({
+const DEFAULT_BASE_CLASS_NAME = "opacity-0 transform translate-y-4";
+
+interface OwnProps {
+  baseClassName?: string;
+}
+
+export default function IntersectionBlock({
   children,
   className,
-}: PropsWithChildren<ClassName>) {
+  baseClassName = DEFAULT_BASE_CLASS_NAME,
+}: PropsWithChildren<OwnProps & ClassName>) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isIntersecting = useIntersectionObserver(containerRef);
-
-  console.log("isIntersecting", isIntersecting);
 
   return (
     <div
       ref={containerRef}
-      className={clsx(className, "transition-all duration-700", { "opacity-0 transform translate-y-4": !isIntersecting })}
+      className={cn(
+        className,
+        "transition-all duration-700",
+        !isIntersecting && baseClassName
+      )}
     >
       {children}
     </div>

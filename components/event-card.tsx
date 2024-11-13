@@ -7,7 +7,7 @@ import { getImageData } from "@/lib/utils/sanity";
 import { Card, CardContent, CardTitle } from "@/shadcn-ui/components/ui/card";
 import { Clock } from "lucide-react";
 import { ClassName } from "@/lib/types/class-name";
-import clsx from "clsx";
+import { cn } from "@/shadcn-ui/lib/utils";
 
 export default function EventCard({
   slug,
@@ -21,7 +21,7 @@ export default function EventCard({
     <Link
       href={`/events/${slug}`}
       key={slug}
-      className={clsx(className, "group")}
+      className={cn(className, "group")}
     >
       <Card className="pt-6 relative h-full min-h-[340px] bg-gradient-to-br from-blue-500 via-purple-500 to-red-500 bg-full overflow-hidden transition-all duration-200 hover:bg-lg">
         <CardContent className="z-30 absolute top-1 left-1 rounded-lg bg-card/50 backdrop-blur-lg p-2 text-center text-foreground">

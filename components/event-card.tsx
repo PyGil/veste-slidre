@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Event } from "@/lib/interfaces/event";
-import { getShortMonth, getDay } from "@/lib/utils/date";
+import { dateWithNnLocale, getShortMonth } from "@/lib/utils/date";
 import { getImageData } from "@/lib/utils/sanity";
 import { Card, CardContent, CardTitle } from "@/shadcn-ui/components/ui/card";
 import { Clock } from "lucide-react";
@@ -26,7 +26,7 @@ export default function EventCard({
       <Card className="pt-6 relative h-full min-h-[340px] bg-gradient-to-br from-blue-500 via-purple-500 to-red-500 bg-full overflow-hidden transition-all duration-200 hover:bg-lg">
         <CardContent className="z-30 absolute top-1 left-1 rounded-lg bg-card/50 backdrop-blur-lg p-2 text-center text-foreground">
           <p className="uppercase text-sm">{getShortMonth(date)}</p>
-          <p className="uppercase font-bold text-xl">{getDay(date)}</p>
+          <p className="uppercase font-bold text-xl">{dateWithNnLocale(date, "dd")}</p>
         </CardContent>
         <CardContent className="z-30 absolute bottom-0 left-0 right-0 bg-card/50 backdrop-blur p-2 backdrop-saturate-150 border-t-[1px]">
           <CardTitle className="text-foreground font-normal">{title}</CardTitle>

@@ -24,14 +24,14 @@ export default function EventCards({ dataByMonth }: OwnProps) {
             </h2>
           </IntersectionBlock>
           <IntersectionBlock baseClassName="transform translate-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-4">
-              {dataByMonth[month].map((event, index, array) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
+              {dataByMonth[month].map((event, index) => (
                 <EventCard
                   key={event.slug}
                   {...event}
                   className={cn(
                     "group first:row-span-2",
-                    index === array.length - 2 && "col-span-2"
+                    index === 5 && "col-span-2"
                   )}
                 />
               ))}

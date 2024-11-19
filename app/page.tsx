@@ -76,8 +76,6 @@ export default async function Home() {
     <div className="container mx-auto pt-40 px-2">
       <h1 className="font-bold text-5xl mb-20 uppercase text-center text-foreground/65">
         Kva skjer i{" "}
-        {/* <span className="bg-gradient-to-b from-[#ff1cf7] to-[#b249f8] bg-clip-text text-transparent"> */}
-        {/*  <span className="bg-gradient-to-b from-[rgb(28,138,255)] to-[rgb(152,73,248)] bg-clip-text text-transparent"> */}
         <span className="text-foreground text-glow">Vestre Slidre?</span>
       </h1>
       <Tabs

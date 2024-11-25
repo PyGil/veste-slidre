@@ -11,6 +11,9 @@ import {
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("@/components/map"), { ssr: false });
 
 interface OwnProps {
   params: { eventName: string };
@@ -25,6 +28,7 @@ async function getData(eventName: string) {
       "image": event_image,
       duration,
       "slug": slug.current,
+      location
     }[0]
   `;
 
@@ -55,6 +59,7 @@ export default async function Event({ params: { eventName } }: OwnProps) {
       <div className="relative h-[500px] w-full bg-gradient-to-br from-blue-500 via-purple-500 to-red-500">
         {event.image && (
           <Image
+            priority
             src={getImageData(event.image).url()}
             alt="banner"
             objectFit="cover"
@@ -78,10 +83,13 @@ export default async function Event({ params: { eventName } }: OwnProps) {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="font-bold text-3xl text-center mb-4">{event.title}</h1>
-        <div className="prose w-full max-w-full">
+        <h1 className="font-bold text-3xl text-center mb-4 mt-12">
+          {event.title}
+        </h1>
+        <div className="prose w-full max-w-full pb-40 dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
           <PortableText value={event.description} />
         </div>
+        <Map location={event.location} />
       </div>
     </>
   );

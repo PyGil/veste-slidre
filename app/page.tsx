@@ -99,7 +99,7 @@ export default async function Home() {
           </TabsContent>
         ))}
       </Tabs>
-      <EventCards dataByMonth={dataByMonth} />
+      <EventCards dataByMonth={dataByMonth} events={data} />
     </div>
   );
 }

@@ -6,6 +6,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body[data-scroll-unlocked][data-scroll-locked] {
+  overflow: auto !important;
+  margin-right: 0 !important;
+  pointer-events: auto !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

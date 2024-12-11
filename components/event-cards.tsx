@@ -16,8 +16,7 @@ import {
 import { DateRange } from "react-day-picker";
 import { isAfter, isBefore, isEqual, startOfDay } from "date-fns";
 import { dateWithNnLocale } from "@/lib/utils/date";
-
-const DEFAULT_SELECT_VALUE = "alle månadene";
+import scrollUnlockToggler from "@/lib/utils/set-scroll-toggler";
 
 interface OwnProps {
   dataByMonth: { [key: string]: Event[] };
@@ -28,7 +27,7 @@ interface SortedEvents {
   [key: string]: Event[];
 }
 
-const SCROLL_UNLOCK_ATTRIBUTE = "data-scroll-unlocked";
+const DEFAULT_SELECT_VALUE = "alle månadene";
 
 export default function EventCards({ dataByMonth, events }: OwnProps) {
   const [selectedEvents, setSelectedEvents] = useState<{
@@ -36,8 +35,6 @@ export default function EventCards({ dataByMonth, events }: OwnProps) {
   }>(dataByMonth);
 
   const onSelectValueChange = (value: string) => {
-    document.body.removeAttribute(SCROLL_UNLOCK_ATTRIBUTE);
-
     if (value === DEFAULT_SELECT_VALUE) {
       setSelectedEvents(dataByMonth);
 
@@ -102,9 +99,7 @@ export default function EventCards({ dataByMonth, events }: OwnProps) {
     <>
       <DatePickerWithRange onSelect={onDatePickerSelect} />
       <Select
-        onOpenChange={() => {
-          document.body.setAttribute(SCROLL_UNLOCK_ATTRIBUTE, "true");
-        }}
+        onOpenChange={scrollUnlockToggler}
         onValueChange={onSelectValueChange}
       >
         <SelectTrigger className="w-[15rem] my-4">

@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-} from "@/shadcn-ui/components/ui/navigation-menu";
-import Link from "next/link";
+
 import Image from "next/image";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/mode-toggle";
 import { Facebook, Instagram } from "@/components/icons";
 import { Mail, Phone } from "lucide-react";
+import { Header } from "@/components/layout/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,30 +40,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="container mx-auto rounded-lg bg-[#111c41]/80 backdrop-blur-lg py-4 px-2 fixed left-1/2 transform -translate-x-1/2 top-4 z-50">
-            <NavigationMenu className="grid grid-cols-1 max-w-full">
-              <NavigationMenuList className="justify-between w-full">
-                <NavigationMenuItem>
-                  <Link href="https://www.vestre-slidre.kommune.no/">
-                    <Image
-                      src="/images/header-logo.svg"
-                      width={300}
-                      height={60}
-                      className="w-[235px] h-[44px] object-contain"
-                      alt="Logo"
-                    />
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <ModeToggle />
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </header>
+          <Header />
           <main
             style={{
+              backgroundPositionY: "top",
+              backgroundSize: "80vw 80vw",
+              backgroundRepeat: "no-repeat",
               backgroundImage:
-                "radial-gradient(circle at 70% 50%, rgb(28 138 255 / 30%), transparent 50%), radial-gradient(circle at 100% 60%, rgb(152 73 248 / 40%), transparent 35%)",
+                "radial-gradient(circle at 15% 40%, rgb(28 138 255 / 30%), transparent 50%)",
             }}
           >
             {children}

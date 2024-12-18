@@ -25,14 +25,5 @@ export const getNextThreeDays = (date?: string) => {
     dateWithNnLocale(addDays(currentDate, index), "yyyy-MM-dd")
   );
 
-  const daysTabs = nextThreeDaysNames.reduce(
-    (previous: Record<string, Event[]>, current: string) => {
-      previous[current] = [];
-
-      return previous;
-    },
-    {}
-  );
-
-  return { nextThreeDays, nextThreeDaysNames, daysTabs };
+  return { nextThreeDays, nextThreeDaysNames };
 };

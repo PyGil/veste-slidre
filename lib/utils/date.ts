@@ -1,6 +1,5 @@
 import { addDays, format, FormatOptions, parseISO } from "date-fns";
 import { nn } from "date-fns/locale";
-import { Event } from "../interfaces/event";
 
 export const dateWithNnLocale = (
   date: string | number | Date,

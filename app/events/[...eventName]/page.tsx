@@ -18,7 +18,10 @@ import { getGoogleMapsLink } from "@/lib/utils/get-google-maps-link";
 import { Card } from "@/shadcn-ui/components/ui/card";
 import { dateWithNnLocale } from "@/lib/utils/date";
 
-const Map = dynamic(() => import("@/components/map"), { ssr: false });
+const Map = dynamic(() => import("@/components/map"), {
+  ssr: false,
+  loading: () => <div>Loading map...</div>,
+});
 
 interface OwnProps {
   params: { eventName: string };

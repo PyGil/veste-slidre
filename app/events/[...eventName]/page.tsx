@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { Clock, MapPin } from "lucide-react";
 import CalendarEvent from "@/lib/interfaces/calendar-event";
 import { getImageData, sanityClient } from "@/lib/utils/sanity";
@@ -17,11 +16,7 @@ import { generateIsc } from "@/lib/utils/generateIsc";
 import { getGoogleMapsLink } from "@/lib/utils/get-google-maps-link";
 import { Card } from "@/shadcn-ui/components/ui/card";
 import { dateWithNnLocale } from "@/lib/utils/date";
-
-const Map = dynamic(() => import("@/components/map"), {
-  ssr: false,
-  loading: () => <div>Loading map...</div>,
-});
+import Map from "@/components/Map";
 
 interface OwnProps {
   params: { eventName: string };

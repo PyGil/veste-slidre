@@ -1,7 +1,7 @@
 import { writeFile } from "node:fs";
-import { Event } from "@/lib/interfaces/event";
+import CalendarEvent from "@/lib/interfaces/calendar-event";
 
-export function generateIsc(event: Event) {
+export function generateIsc(event: CalendarEvent) {
   const icsContent = `
     BEGIN:VCALENDAR
     VERSION:2.0

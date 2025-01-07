@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Event } from "@/lib/interfaces/event";
+import CalendarEvent from "@/lib/interfaces/calendar-event";
 import { dateWithNnLocale, getShortMonth } from "@/lib/utils/date";
 import { getImageData } from "@/lib/utils/sanity";
 import { Card, CardContent, CardTitle } from "@/shadcn-ui/components/ui/card";
@@ -17,7 +17,7 @@ export default function EventCard({
   duration,
   location,
   className,
-}: Event & ClassName) {
+}: CalendarEvent & ClassName) {
   return (
     <Link
       href={`/events/${slug}`}

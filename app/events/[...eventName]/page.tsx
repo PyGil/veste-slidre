@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Clock, MapPin } from "lucide-react";
-import { Event as EventType } from "@/lib/interfaces/event";
+import CalendarEvent from "@/lib/interfaces/calendar-event";
 import { getImageData, sanityClient } from "@/lib/utils/sanity";
 import {
   Breadcrumb,
@@ -14,7 +14,7 @@ import {
 } from "@/shadcn-ui/components/ui/breadcrumb";
 import { PortableText } from "@portabletext/react";
 import { generateIsc } from "@/lib/utils/generateIsc";
-import { getGoogleMapsLink } from "@/lib/utils/getGoogleMapsLink";
+import { getGoogleMapsLink } from "@/lib/utils/get-google-maps-link";
 import { Card } from "@/shadcn-ui/components/ui/card";
 import { dateWithNnLocale } from "@/lib/utils/date";
 
@@ -37,7 +37,7 @@ async function getData(eventName: string) {
     }[0]
   `;
 
-  const event = await sanityClient.fetch<EventType>(query);
+  const event = await sanityClient.fetch<CalendarEvent>(query);
 
   if (event) generateIsc(event);
 
@@ -51,7 +51,7 @@ export async function generateStaticParams() {
   }
 `;
 
-  return (await sanityClient.fetch<EventType[]>(query)).map(({ slug }) => ({
+  return (await sanityClient.fetch<CalendarEvent[]>(query)).map(({ slug }) => ({
     eventName: [slug],
   }));
 }

@@ -1,7 +1,7 @@
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { PortableTextBlock } from "next-sanity";
 
-export interface Event {
+export default interface CalendarEvent {
   title: string;
   date: string;
   description: PortableTextBlock[];

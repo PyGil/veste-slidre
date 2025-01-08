@@ -76,7 +76,7 @@ export default async function Event({ params: { eventName } }: OwnProps) {
           />
         )}
       </div>
-      <div className="container mx-auto pt-10">
+      <div className="container mx-auto pt-10 px-4 pb-40">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -93,37 +93,42 @@ export default async function Event({ params: { eventName } }: OwnProps) {
         <h1 className="font-bold text-3xl text-center mb-4 mt-12">
           {event.title}
         </h1>
-        <div className="flex items-start flex-col sm:flex-row justify-between">
-          <div className="prose w-full max-w-full pb-40 dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
+        <div className="flex items-start flex-col sm:flex-row justify-between pb-40">
+          <div className="prose w-full max-w-full dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
             <PortableText value={event.description} />
           </div>
-          <Card className="flex flex-col p-4 ml-12 md:w-96">
-            <div className="flex items-center">
-              <MapPin className="h-3.5 w-3.5 mr-1" />
-              <p className=" font-bold text-lg">Kvar</p>
+          <Card className="flex md:flex-col justify-around p-4 md:ml-12 md:w-96 w-full">
+            <div>
+              <div className="flex items-center">
+                <MapPin className="h-3.5 w-3.5 mr-1" />
+                <p className=" font-bold text-lg">Kvar</p>
+              </div>
+              <p>{event.location}</p>
+              <a
+                href={getGoogleMapsLink(event.location)}
+                target="_blank"
+                className="text-primary underline hover:no-underline"
+              >
+                Få vegen
+              </a>
             </div>
-            <p>{event.location}</p>
-            <a
-              href={getGoogleMapsLink(event.location)}
-              target="_blank"
-              className="text-primary underline hover:no-underline"
-            >
-              Få vegen
-            </a>
-            <div className="flex items-center mt-4">
-              <Clock className="h-3.5 w-3.5 mr-1" />
-              <p className=" font-bold text-lg">Når</p>
+            <div className="md:mt-4">
+              <div className="flex items-center">
+                <Clock className="h-3.5 w-3.5 mr-1" />
+                <p className=" font-bold text-lg">Når</p>
+              </div>
+              <p>
+                {dateWithNnLocale(event.date, "iiii, MMMM dd")},{" "}
+                {event.duration}
+              </p>
+              <a
+                href={`/calendar/${eventName[0]}.ics`}
+                download
+                className="text-primary underline hover:no-underline"
+              >
+                Legg til i kalenderen
+              </a>
             </div>
-            <p>
-              {dateWithNnLocale(event.date, "iiii, MMMM dd")}, {event.duration}
-            </p>
-            <a
-              href={`/calendar/${eventName[0]}.ics`}
-              download
-              className="text-primary underline hover:no-underline"
-            >
-              Legg til i kalenderen
-            </a>
           </Card>
         </div>
         <Map location={event.location} />

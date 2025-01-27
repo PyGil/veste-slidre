@@ -1,10 +1,11 @@
-
-    BEGIN:VCALENDAR
-    VERSION:2.0
-    BEGIN:VEVENT
-    SUMMARY:Båtarrangement: En Dag med Eventyr på Vannet
-    DESCRIPTION:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
-    LOCATION:Tunvegen 17, 2966 Slidre
-    DTSTART:2024-11-28
-    END:VEVENT
-    END:VCALENDAR
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vestre Slidre//Calendar Event//EN
+BEGIN:VEVENT
+SUMMARY:Båtarrangement: En Dag med Eventyr på Vannet
+DESCRIPTION:Gjør deg klar for en spennende dag på vannet! Vårt båtarrangement er perfekt for de som elsker vannsport, naturen, og alle som ønsker en dag med moro og avslapning på innsjøen eller havet. Enten du er en erfaren sjømann eller nybegynner, vil det være noe for alle!\n\nHøydepunkter fra arrangementet:\n\nBåtturer: Nyt guidede båtturer rundt vakre innsjøer, elver eller kystområder.\n\nVannsport: Prøv spennende aktiviteter som kajakkpadling, stand-up paddleboarding og wakeboarding.\n\nFiske: Ta med fiskestangen og slapp av mens du fisker på noen av de vakreste stedene.\n\nBBQ & Sosialisering: Etter en dag med eventyr, nyt en grillfest ved vannet og møt andre båtentusiaster.\n\nBli med på en dag fylt med vannmoro, fantastisk utsikt og godt selskap!
+LOCATION:Tunvegen 17, 2966 Slidre
+DTSTART:20241128T160000Z
+DTEND:20241128T180000Z
+END:VEVENT
+END:VCALENDAR

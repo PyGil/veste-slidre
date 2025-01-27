@@ -1,10 +1,11 @@
-
-    BEGIN:VCALENDAR
-    VERSION:2.0
-    BEGIN:VEVENT
-    SUMMARY:Halloween
-    DESCRIPTION:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
-    LOCATION:Tunvegen 17, 2966 Slidre
-    DTSTART:2024-11-28
-    END:VEVENT
-    END:VCALENDAR
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vestre Slidre//Calendar Event//EN
+BEGIN:VEVENT
+SUMMARY:Halloween
+DESCRIPTION:Halloween-festen er en spennende kveld fylt med spøkelser, monstre og morsomme kostymer! Vi inviterer alle til å bli med på en uforglemmelig kveld den 31. oktober. Dette er en fantastisk anledning til å slippe løs din indre skrekk og ha det moro med venner og familie i en atmosfære av mystikk og spenning.\n\nForestill deg et lokalet dekorert med skumle detaljer som spøkelser som svever fra taket, edderkopper som henger i hvert hjørne, og gresskar som lyser opp rommet med et vennlig, men skummelt smil. Stemningen vil være perfekt for å feire denne fantastiske høytiden!\n\nVi har planlagt en kostymekonkurranse som gir deg muligheten til å vise frem ditt mest kreative og morsomme kostyme. Enten du velger å kle deg ut som en klassisk vampyr, en skummel heks eller noe helt unikt, vil vi ha premier for de beste kostymene. Så ta på deg ditt beste antrekk og gjør deg klar for å imponere!\n\nNår kvelden skrider frem, vil vi sette opp et filmområde hvor vi viser populære skrekkfilmer og klassikere som "Hocus Pocus" og "The Nightmare Before Christmas". Ta med deg snacks og kos deg med de skumle filmene sammen med vennene dine. Det blir også en mengde godteri tilgjengelig for de søtsugne, fra sjokolade til spesiallagde Halloween-snacks.\n\nFor de som elsker å være aktive, har vi planlagt morsomme spill og aktiviteter som vil få alle til å delta. Her er noen av aktivitetene du kan forvente:\n\nSpøkelses-stafetter\n\nSkattejakt med Halloween-tema\n\nAnsiktsmaling\n\nSpøkelseshistorier rundt leirbålet\n\nDansefest med skumle og festlige sanger\n\nBli med oss i denne magiske feiringen av Halloween, hvor du kan skape minner sammen med venner og familie. Vi gleder oss til å se deg i kostyme! Det vil bli en kveld full av latter, skrekk og mye moro!
+LOCATION:Tunvegen 17, 2966 Slidre
+DTSTART:20241128T160000Z
+DTEND:20241128T180000Z
+END:VEVENT
+END:VCALENDAR

@@ -1,10 +1,11 @@
-
-    BEGIN:VCALENDAR
-    VERSION:2.0
-    BEGIN:VEVENT
-    SUMMARY:Campingarrangement: En Morsom og Eventyrlig Helg
-    DESCRIPTION:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
-    LOCATION:Tunvegen 17, 2966 Slidre
-    DTSTART:2024-11-27
-    END:VEVENT
-    END:VCALENDAR
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vestre Slidre//Calendar Event//EN
+BEGIN:VEVENT
+SUMMARY:Campingarrangement: En Morsom og Eventyrlig Helg
+DESCRIPTION:Bli med på en uforglemmelig helg under stjernene! Vårt campingarrangement byr på den perfekte blandingen av eventyr, avslapning og natur. Enten du er en erfaren camper eller en nybegynner, vil du få nyte den rolige skjønnheten i naturen.\n\nHøydepunkter fra arrangementet:\n\nTeltoppsett & Bål: Lær hvordan du setter opp teltet og kos deg rundt bålet.\n\nTurgåing: Utforsk naturskjønne stier med guidede turer gjennom skoger og fjell.\n\nUtendørs Aktiviteter: Nyt aktiviteter som fiske, kanopadling og naturspill.\n\nStjerneskygging: Opplev den imponerende nattehimmelen i en fredfull setting.\n\nTa med familie og venner, og la oss lage minner rundt bålet!
+LOCATION:Tunvegen 17, 2966 Slidre
+DTSTART:20241127T180000Z
+DTEND:20241127T220000Z
+END:VEVENT
+END:VCALENDAR

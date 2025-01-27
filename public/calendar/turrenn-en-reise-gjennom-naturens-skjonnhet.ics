@@ -1,10 +1,11 @@
-
-    BEGIN:VCALENDAR
-    VERSION:2.0
-    BEGIN:VEVENT
-    SUMMARY:Turrenn: En Reise Gjennom Naturens Skjønnhet
-    DESCRIPTION:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
-    LOCATION:Tunvegen 17, 2966 Slidre
-    DTSTART:2024-11-27
-    END:VEVENT
-    END:VCALENDAR
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vestre Slidre//Calendar Event//EN
+BEGIN:VEVENT
+SUMMARY:Turrenn: En Reise Gjennom Naturens Skjønnhet
+DESCRIPTION:Gjør deg klar for en spennende og givende turopplevelse! Bli med på en dag med eventyr hvor vi utforsker fantastiske stier, imponerende landskap og naturens fredelige skjønnhet. Enten du er en erfaren turgåer eller nybegynner, er dette arrangementet tilpasset alle nivåer.\n\nHøydepunkter fra arrangementet:\n\nNaturskjønne Stier: Gå på forskjellige ruter gjennom skoger, fjell og daler med fantastiske utsikter.\n\nGuidede Turer: Lær om lokal natur, dyreliv og historie fra våre kunnskapsrike guider.\n\nUtfordringer og Belønninger: Opplev både utfordrende og belønnende partier, perfekt for å komme i kontakt med naturen og utfordre dine egne grenser.\n\nSosialisering: Møt andre turgåere og del historier underveis.\n\nTa med deg gode tursko, vannflaske og en eventyrlysten holdning! Ikke gå glipp av denne muligheten til å komme nærmere naturen og treffe andre eventyrlystne mennesker.
+LOCATION:Tunvegen 17, 2966 Slidre
+DTSTART:20241127T120000Z
+DTEND:20241127T160000Z
+END:VEVENT
+END:VCALENDAR

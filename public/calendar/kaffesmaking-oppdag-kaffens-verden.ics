@@ -1,10 +1,11 @@
-
-    BEGIN:VCALENDAR
-    VERSION:2.0
-    BEGIN:VEVENT
-    SUMMARY:Kaffesmaking: Oppdag Kaffens Verden
-    DESCRIPTION:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
-    LOCATION:Tunvegen 17, 2966 Slidre
-    DTSTART:2024-11-27
-    END:VEVENT
-    END:VCALENDAR
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vestre Slidre//Calendar Event//EN
+BEGIN:VEVENT
+SUMMARY:Kaffesmaking: Oppdag Kaffens Verden
+DESCRIPTION:Er du en kaffeelsker eller bare nysgjerrig på kaffens verden? Bli med på et hyggelig kaffearrangement hvor du kan utforske forskjellige kaffebønner, bryggemetoder og smaksprofiler. Enten du er en erfaren kaffekjenner eller en vanlig kaffe-drikkende person, er dette arrangementet for alle!\n\nHøydepunkter fra arrangementet:\n\nKaffesmaking: Smak på et utvalg fersk brygget kaffe fra forskjellige regioner og lær om de unike smakene.\n\nBrygging Workshops: Lær om forskjellige bryggemetoder, fra fransk presse til pour-over, og finn ut hva som gjør hver metode spesiell.\n\nKaffepairing: Nyt deilige matretter som kompletterer kaffens smaker.\n\nBarista-tips: Få profesjonelle tips fra eksperter på hvordan du lager den perfekte koppen kaffe hjemme.\n\nTa med deg nysgjerrigheten for kaffe og din kjærlighet for en god kopp. La oss sammen smake, utforske og oppdage kaffens vidunderlige verden!
+LOCATION:Tunvegen 17, 2966 Slidre
+DTSTART:20241127T180000Z
+DTEND:20241127T200000Z
+END:VEVENT
+END:VCALENDAR

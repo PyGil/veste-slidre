@@ -1,10 +1,11 @@
-
-    BEGIN:VCALENDAR
-    VERSION:2.0
-    BEGIN:VEVENT
-    SUMMARY:Julearrangement
-    DESCRIPTION:[object Object],[object Object],[object Object],[object Object]
-    LOCATION:Tunvegen 17, 2966 Slidre
-    DTSTART:2024-12-24
-    END:VEVENT
-    END:VCALENDAR
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vestre Slidre//Calendar Event//EN
+BEGIN:VEVENT
+SUMMARY:Julearrangement
+DESCRIPTION:Når den første snøen dekker den sjarmerende landsbyen, fylles luften med julestemning. Hvert år kommer samfunnet sammen for et festlig julearrangement som bringer glede og varme til alle. Torget forvandles til et vinterlandskap, pyntet med blinkende lys og vakre juletrær.\n\nFamilier samles for å nyte et tradisjonelt julemarked, hvor lokale håndverkere selger håndlagde varer, ornamenter og deilige godsaker. Lukten av "gløgg" og nybakte "pepperkaker" fyller luften og frister besøkende til å nyte sesongens delikatesser.\n\nBarn venter spent på at Julenissen skal komme, og han ankommer i en slede, sprer glede og deler ut små gaver. Det er også morsomme aktiviteter som skøyting og hestevognkjøring, som skaper uforglemmelige minner for alle.\n\nHøydepunktet på arrangementet er fellessamlingen hvor alle synger klassiske julesanger, og feirer varmen av fellesskap og gleden ved høytiden.
+LOCATION:Tunvegen 17, 2966 Slidre
+DTSTART:20241224T160000Z
+DTEND:20241224T180000Z
+END:VEVENT
+END:VCALENDAR

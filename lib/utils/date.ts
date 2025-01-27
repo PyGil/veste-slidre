@@ -1,5 +1,15 @@
-import { addDays, format, FormatOptions, parseISO } from "date-fns";
+import {
+  addDays,
+  addHours,
+  format,
+  FormatOptions,
+  parseISO,
+  set,
+} from "date-fns";
 import { nn } from "date-fns/locale";
+
+const DEFAULT_EVENT_DURATION = 1;
+const ICalendarDateFormat = "yyyyMMdd'T'HHmmss'Z'";
 
 export const dateWithNnLocale = (
   date: string | number | Date,
@@ -25,4 +35,41 @@ export const getNextThreeDays = (date?: string) => {
   );
 
   return { nextThreeDays, nextThreeDaysNames };
+};
+
+export const formatToICalendarDate = (date: Date): string =>
+  format(date, ICalendarDateFormat);
+
+export const parseTimeRange = (
+  duration: string,
+  date: Date
+): {
+  startDate: Date;
+  endDate: Date;
+} => {
+  const [startTime, endTime] = duration.replaceAll(" ", "").split("-");
+
+  if (!endTime) {
+    const startDate = date;
+    const endDate = addHours(date, DEFAULT_EVENT_DURATION);
+
+    return { startDate, endDate };
+  }
+
+  const [startHours, startMinutes] = startTime.split(":").map(Number);
+  const [endHours, endMinutes] = endTime.split(":").map(Number);
+
+  const timezoneOffset = date.getTimezoneOffset();
+
+  const startDate = set(date, {
+    hours: startHours,
+    minutes: startMinutes - timezoneOffset,
+  });
+
+  const endDate = set(date, {
+    hours: endHours,
+    minutes: endMinutes - timezoneOffset,
+  });
+
+  return { startDate, endDate };
 };

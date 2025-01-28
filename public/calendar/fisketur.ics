@@ -5,7 +5,7 @@ BEGIN:VEVENT
 SUMMARY:Fisketur
 DESCRIPTION:Bli med oss på en avslappende fisketur i de vakre vannene i Norge! Opplev gleden ved fiske mens du er omgitt av imponerende landskap og fredfull natur. Enten du er en erfaren fisker eller nybegynner, er dette arrangementet perfekt for alle ferdighetsnivåer.\nHva du bør ta med: Fiskestang, agn, passende klær og snacks!\n\nIkke gå glipp av denne muligheten til å knytte bånd med naturen og andre fiskeentusiaster. Meld deg på i dag!
 LOCATION:Tunvegen 17, 2966 Slidre
-DTSTART:20241130T080000Z
-DTEND:20241130T120000Z
+DTSTART:20241130T080000
+DTEND:20241130T120000
 END:VEVENT
 END:VCALENDAR

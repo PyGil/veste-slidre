@@ -9,7 +9,7 @@ import {
 import { nn } from "date-fns/locale";
 
 const DEFAULT_EVENT_DURATION = 1;
-const ICalendarDateFormat = "yyyyMMdd'T'HHmmss'Z'";
+const ICalendarDateFormat = "yyyyMMdd'T'HHmmss";
 
 export const dateWithNnLocale = (
   date: string | number | Date,
@@ -37,16 +37,13 @@ export const getNextThreeDays = (date?: string) => {
   return { nextThreeDays, nextThreeDaysNames };
 };
 
-export const formatToICalendarDate = (date: Date): string =>
+export const formatToICalendarDate = (date: string | number | Date): string =>
   format(date, ICalendarDateFormat);
 
 export const parseTimeRange = (
   duration: string,
   date: Date
-): {
-  startDate: Date;
-  endDate: Date;
-} => {
+) => {
   const [startTime, endTime] = duration.replaceAll(" ", "").split("-");
 
   if (!endTime) {
@@ -59,16 +56,14 @@ export const parseTimeRange = (
   const [startHours, startMinutes] = startTime.split(":").map(Number);
   const [endHours, endMinutes] = endTime.split(":").map(Number);
 
-  const timezoneOffset = date.getTimezoneOffset();
-
   const startDate = set(date, {
     hours: startHours,
-    minutes: startMinutes - timezoneOffset,
+    minutes: startMinutes,
   });
 
   const endDate = set(date, {
     hours: endHours,
-    minutes: endMinutes - timezoneOffset,
+    minutes: endMinutes,
   });
 
   return { startDate, endDate };

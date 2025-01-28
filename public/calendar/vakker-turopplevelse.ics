@@ -5,7 +5,7 @@ BEGIN:VEVENT
 SUMMARY:Vakker Turopplevelse
 DESCRIPTION:Bli med oss på en fantastisk tur i den vakre norske villmarken! Opplev naturen som aldri før når vi utforsker naturskjønne stier, nyter frisk luft og tar inn den imponerende utsikten. Enten du er en erfaren fotturist eller nybegynner, er dette arrangementet for alle.\n\nHva du bør ta med: Gode tursko, vann, snacks og kamera!\n\nIkke gå glipp av denne muligheten til å knytte bånd med naturen og andre friluftsentusiaster. Meld deg på i dag!
 LOCATION:Tunvegen 17, 2966 Slidre
-DTSTART:20241204T120000Z
-DTEND:20241204T160000Z
+DTSTART:20241204T120000
+DTEND:20241204T160000
 END:VEVENT
 END:VCALENDAR

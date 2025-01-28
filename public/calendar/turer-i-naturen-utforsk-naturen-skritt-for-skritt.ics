@@ -5,7 +5,7 @@ BEGIN:VEVENT
 SUMMARY:Turer i Naturen: Utforsk Naturen Skritt for Skritt
 DESCRIPTION:Bli med på en forfriskende tur gjennom noen av de vakreste naturområdene! Vårt tursarrangement er perfekt for alle som elsker friluftsliv, frisk luft og en rolig dag i naturen. Enten du ønsker å få litt mosjon eller bare nyte en avslappende spasertur, er dette arrangementet for deg.\n\nHøydepunkter fra arrangementet:\n\nNaturskjønne Ruter: Gå langs pittoreske stier gjennom skoger, åser og langs kystlinjen.\n\nGuidede Turer: Lær om lokal flora og fauna fra en kunnskapsrik guide.\n\nNaturopplevelse: Ta inn den friske luften, vakre landskapene og nyt den beroligende atmosfæren i naturen.\n\nSosialisering: Møt nye mennesker og knytt bånd med andre naturentusiaster underveis.\n\nTa med deg gode tursko, nysgjerrigheten og kjærligheten til naturen! Vi ser frem til å se deg der!
 LOCATION:Tunvegen 17, 2966 Slidre
-DTSTART:20241129T160000Z
-DTEND:20241129T210000Z
+DTSTART:20241129T160000
+DTEND:20241129T210000
 END:VEVENT
 END:VCALENDAR
